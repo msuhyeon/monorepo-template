@@ -1,0 +1,28 @@
+:root {
+  /* font color */
+  --text-color: #fff;
+  --caption-color: #acacac;
+
+  /* ui color */
+  --primary-color: #a81e3c;
+  --secondary-color: #f49902;
+  --tertiary-color: #a5978b;
+  --on-background-color: #ffffff;
+  --on-background-color-2: #fafafa;
+  --bg-navy: #19142a;
+
+  /* design color */
+  --pink-color: #ffb4cd;
+  --pink-light-color: #ffdce8;
+  --yellow-color: #ffe091;
+  --blue-color: #00adc8;
+  --blue-light-color: #eafcff;
+  --blue-dark-color: #1d1a47;
+  --bright-yellow: #ffd700;
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  /* size */
+  --tab-height: 42px;
+  --tab-width: 120px;
+  --line-height: 1.5rem;
+}

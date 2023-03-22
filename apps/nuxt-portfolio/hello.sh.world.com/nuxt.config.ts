@@ -25,6 +25,7 @@ export default defineNuxtConfig({
       },
     },
     // '@fortawesome/fontawesome-svg-core/styles.css',
+
     modules: [
       [
         "@fullpage/nuxt-fullpage",
@@ -40,7 +41,7 @@ export default defineNuxtConfig({
         failOnError: false,
         cache: false,
       }),
-      //   { src: "~/plugins/aos.js", mode: "client" },
+      { src: "~/plugins/aos.js", mode: "client" },
     ],
   },
 });

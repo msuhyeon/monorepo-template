@@ -1,0 +1,11 @@
+@import 'common/reset.scss';
+@import 'common/normalize.scss';
+@import 'common/font.scss';
+
+/* default style */
+html,
+body {
+    font-family: sans-serif;
+    font-weight: 400; // 100, 300, 400, 500, 700
+    color: var(--text-color);
+}
