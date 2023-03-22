@@ -1,4 +1,15 @@
 {
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "Night Owl",
+  "editor.formatOnSave": true,
+  "eslint.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "terminal.integrated.profiles.windows": {
+    "GitBash": {
+      "path": ["C:\\Git\\bin\\bash.exe"]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "GitBash"
 }
