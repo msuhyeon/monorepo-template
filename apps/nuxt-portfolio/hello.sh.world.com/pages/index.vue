@@ -2,13 +2,32 @@
   <div class="main">
     <div>
       <section id="home" class="section main-section" data-aos="fade-up">
-        <h2 class="section__content--sub">Hello I'm Suhyeon Maeng</h2>
-        <h1 class="section__content--title">I'm a Web Developer</h1>
-        <p class="section__content--desc">
-          저는 뛰어난 디지털 경험을 추구하는 프론트엔드 엔지니어 입니다. <br />
-          웹 사이트의 디테일, 디자이너와의 의사소통을 위해 최근엔 UX/UI를 학습
-          중 입니다.
-        </p>
+        <div class="section__content--wrap">
+          <div class="section__content--left">
+            <h2 class="section__content--sub">Hi i'm Suhyeon Maeng</h2>
+            <h1 class="section__content--title">Web Developer</h1>
+            <p class="section__content--desc">
+              저는 뛰어난 디지털 경험을 추구하는 프론트엔드 엔지니어 입니다.
+              <br />
+              웹 사이트의 디테일, 디자이너와의 의사소통을 위해 최근엔 UX/UI를
+              학습 중 입니다.
+            </p>
+            <p class="section__content--desc">
+              저랑 함께 웹을 만들어가는게 기대되시나요?
+            </p>
+            <div class="section__content--button-wrap">
+              <button>연락해보기</button>
+              <button>프로젝트 구경 하기</button>
+            </div>
+          </div>
+          <div class="section__content--right">
+            <img
+              class="avatar"
+              src="../assets/images/Avatar.png"
+              alt="avatar image"
+            />
+          </div>
+        </div>
       </section>
       <section id="about" class="section main-section" data-aos="fade-up">
         <div class="section__content--about">
@@ -225,13 +244,22 @@ export default {
   background: var(--bg-navy);
   .section {
     height: 100vh;
-    /* margin-top: calc(11.12em + 2em); */
-    padding: 15rem 15rem 0;
 
+    .section__content--wrap {
+      display: flex;
+    }
+    padding: 15rem 15rem 0;
+    /* margin-top: calc(11.12em + 2em); */
     .section__content--title {
       font-size: 5rem;
       color: var(--bright-yellow);
       font-family: 'Black Han Sans';
+    }
+    .section__content--right {
+      padding-left: 17rem;
+      .avatar {
+        width: 15rem;
+      }
     }
     .section__content--sub {
       margin-top: 20px;
@@ -243,6 +271,30 @@ export default {
       font-size: 1rem;
       line-height: 1.8rem;
       color: #fff;
+    }
+    .section__content--button-wrap {
+      margin-top: 2rem;
+
+      button {
+        width: 15rem;
+        height: 5rem;
+        border-radius: 10rem;
+        background: none;
+        color: var(--brightest-yellow);
+        border: 1px solid var(--brightest-yellow);
+        background: var(--bg-navy);
+        box-shadow: none;
+        cursor: pointer;
+
+        &:hover {
+          background: var(--brightest-yellow);
+          color: #000;
+        }
+
+        &:first-child {
+          margin-right: 2rem;
+        }
+      }
     }
     .section__content--about {
       margin-top: 2rem;

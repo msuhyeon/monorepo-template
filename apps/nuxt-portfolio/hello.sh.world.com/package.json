@@ -45,7 +45,6 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "@openafg/nuxt-fullpage": "^1.0.5",
-    "aos": "^2.3.4",
     "sal.js": "^0.8.5",
     "vite-plugin-eslint": "^1.8.1"
   }
