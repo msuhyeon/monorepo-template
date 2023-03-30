@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div>
-      <section id="home" class="section main-section" data-aos="fade-up">
+      <section id="home" class="section main-section">
         <div class="section__content--wrap">
           <div class="section__content--left">
             <h2 class="section__content--sub">Hi i'm Suhyeon Maeng</h2>
@@ -29,7 +29,7 @@
           </div>
         </div>
       </section>
-      <section id="about" class="section main-section" data-aos="fade-up">
+      <section id="about" class="section main-section">
         <div class="section__content--about">
           <div class="about-item-wrap">
             <span>
@@ -55,7 +55,7 @@
           </div>
         </div>
       </section>
-      <section id="work" class="section job-section" data-aos="fade-up">
+      <section id="work" class="section job-section">
         <h1 class="section__content--title">Experience</h1>
         <!-- <p class="section__content--sub">근무 한 곳</p> -->
         <div class="section__content jobs">
@@ -134,7 +134,7 @@
           </div>
         </div>
       </section>
-      <section id="projects" class="section career-section" data-aos="fade-up">
+      <section id="projects" class="section career-section">
         <h1 class="section__content--title">Work</h1>
         <p class="section__content--sub">
           웹사이트를 위한 것들을 만들고 있습니다.
@@ -144,7 +144,7 @@
           저는 위메이드 전기아이피에 근무하며 프론트팀을 리딩하고있습니다.
         </p>
       </section>
-      <section id="contact" class="section contact-section" data-aos="fade-up">
+      <section id="contact" class="section contact-section">
         <div class="section__content--contact">
           <h1 class="section__content--title">Contact me</h1>
           <p class="section__content--sub">메일함은 언제든 열려있습니다.</p>
