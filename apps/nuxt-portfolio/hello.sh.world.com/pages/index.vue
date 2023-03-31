@@ -1,19 +1,189 @@
 <template>
   <div class="main">
-    <swiper
-      :slides-per-view="3"
-      :space-between="50"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange"
+    <Swiper
+      direction="vertical"
+      :pagination="{
+        clickable: true,
+      }"
+      :modules="modules"
+      :css-mode="true"
+      class="page-swiper"
     >
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-    </swiper>
+      <SwiperSlide>
+        <section id="home" class="section main-section">
+          <div class="section__content--wrap">
+            <div class="section__content--left">
+              <h2 class="section__content--sub">Hi i'm Suhyeon Maeng</h2>
+              <h1 class="section__content--title">Web Developer</h1>
+              <p class="section__content--desc">
+                저는 뛰어난 디지털 경험을 추구하는 프론트엔드 엔지니어 입니다.
+                <br />
+                웹 사이트의 디테일, 디자이너와의 의사소통을 위해 최근엔 UX/UI를
+                학습 중 입니다.
+              </p>
+              <p class="section__content--desc">
+                저랑 함께 웹을 만들어가는게 기대되시나요?
+              </p>
+              <div class="section__content--button-wrap">
+                <button>연락해보기</button>
+                <button>프로젝트 구경 하기</button>
+              </div>
+            </div>
+            <div class="section__content--right">
+              <img
+                class="avatar"
+                src="../assets/images/Avatar.png"
+                alt="avatar image"
+              />
+            </div>
+          </div></section
+      ></SwiperSlide>
+      <SwiperSlide>
+        <section id="about" class="section main-section">
+          <div class="section__content--about">
+            <div class="about-item-wrap">
+              <span>
+                <font-awesome-icon icon="fa-solid fa-truck-fast" />
+              </span>
+
+              <p>
+                빠른 로딩 시간과 지연 없는 인터랙션을 구현하는게 최우선
+                순위입니다.
+              </p>
+            </div>
+            <div class="about-item-wrap">
+              <span>
+                <font-awesome-icon icon="fa-solid fa-laptop-code" />
+              </span>
+              <p>크고 작은 모든 디바이스에서 아름답게 보여지도록 작업합니다.</p>
+            </div>
+            <div class="about-item-wrap">
+              <span>
+                <font-awesome-icon icon="fa-solid fa-user" />
+              </span>
+              <p>사용하기 쉬운 직관적인 UX/UI를 선호합니다.</p>
+            </div>
+          </div>
+        </section>
+      </SwiperSlide>
+      <SwiperSlide>
+        <section id="work" class="section job-section">
+          <h1 class="section__content--title">Experience</h1>
+          <!-- <p class="section__content--sub">근무 한 곳</p> -->
+          <div class="section__content jobs">
+            <!-- <div role="tabList" aria-label="Job tabs" class="jobs-tabs">
+              <button
+                v-for="(item, index) in company"
+                :key="index"
+                :class="index === 0 ? 'jobs-tab on' : 'jobs-tab'"
+                @click="clickTab($event, item.name)"
+              >
+                <span>
+                  {{ item.name }}
+                </span>
+              </button>
+            </div>
+            <div role="panelList" aria-label="Job panels" class="jobs-panels">
+              <div
+                v-for="(item, index) in company"
+                :id="item.name"
+                :key="index"
+                :class="index === 0 ? 'jobs-panel on' : 'jobs-panel'"
+                role="tabpanel"
+                tabindex="index"
+              >
+                <h3 class="job-title">
+                  <span class="position">{{ item.position }}</span
+                  >&nbsp;&#64;
+                  <span class="company">{{ item.name }}</span>
+                </h3>
+                <p class="period">{{ item.period }}</p>
+                <ul class="career-list">
+                  <li
+                    v-for="(career, cIndex) in item.careers"
+                    :key="cIndex"
+                    class="career-list-item"
+                  >
+                    <font-awesome-icon :icon="['fas', 'check']" />
+                    <span>{{ career }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+            <!-- :class="hover ? 'jobs-card hover' : 'jobs-card'" -->
+            <div
+              v-for="(item, index) in company"
+              :key="index"
+              ref="card"
+              :class="hover ? `active card ${index}` : ` card ${index}`"
+            >
+              <!-- <div v-show="false" class="card-header">
+                <h2 class="name">
+                  {{ item.name }}
+                </h2>
+              </div> -->
+              <div>
+                <img src="" alt="item.name" />
+              </div>
+              <div class="job-title">
+                <h4 class="name">
+                  {{ item.name }}
+                </h4>
+                <span class="position">{{ item.position }}</span
+                >&nbsp;&#64; <span class="company">{{ item.name }}</span>
+                <p class="period">{{ item.period }}</p>
+              </div>
+              <ul class="career-list">
+                <li
+                  v-for="(career, cIndex) in item.careers"
+                  :key="cIndex"
+                  class="career-list-item"
+                >
+                  <!-- <font-awesome-icon :icon="['fas', 'check']" /> -->
+                  <p>{{ career }}</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section></SwiperSlide
+      >
+      <SwiperSlide>
+        <section id="projects" class="section career-section">
+          <h1 class="section__content--title">Work</h1>
+          <p class="section__content--sub">
+            웹사이트를 위한 것들을 만들고 있습니다.
+          </p>
+          <p class="section__content--desc">
+            저는 뛰어난 디지털 경험을 구축하는 프론트엔드 엔지니어 입니다. 현재
+            저는 위메이드 전기아이피에 근무하며 프론트팀을 리딩하고있습니다.
+          </p>
+        </section></SwiperSlide
+      >
+      <SwiperSlide>
+        <section id="contact" class="section contact-section">
+          <div class="section__content--contact">
+            <h1 class="section__content--title">Contact me</h1>
+            <p class="section__content--sub">메일함은 언제든 열려있습니다.</p>
+            <p class="section__content--desc">
+              업무가 바쁜 경우엔 회신이 늦어질 수 있습니다. 늦어도 이틀 내엔
+              연락 드리겠습니다.
+            </p>
+            <a
+              href="mailto:job.maengsh@gmail.com?body=안녕하세요. 포트폴리오를 보고 연락드립니다."
+              class="mail hover:shadow font-bold py-3 px-8 text-xl rounded text-center"
+              >Say Hello 👋</a
+            >
+          </div>
+        </section></SwiperSlide
+      >
+    </Swiper>
   </div>
 </template>
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper';
 
 definePageMeta({
   layout: 'default',
@@ -24,15 +194,8 @@ export default {
     SwiperSlide,
   },
   setup() {
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
-    const onSlideChange = () => {
-      console.log('slide change');
-    };
     return {
-      onSwiper,
-      onSlideChange,
+      modules: [Pagination],
     };
   },
   data() {
@@ -109,9 +272,16 @@ export default {
 </script>
 <style lang="scss" scoped>
 .main {
-  background: var(--bg-navy);
   .swiper {
     height: 100vh;
+
+    .swiper-slide {
+      /* height: 100vh; */
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+    }
+
     .section__content--wrap {
       display: flex;
     }
@@ -303,5 +473,20 @@ export default {
       }
     }
   }
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical > .swiper-pagination-bullets {
+  transform: translate3d(-2rem, -50%, 0) 1 !important;
+}
+.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+  background: #fff !important;
+  height: 1rem !important;
+  width: 1rem !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--bright-yellow);
 }
 </style>

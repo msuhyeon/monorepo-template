@@ -16,6 +16,7 @@ body {
     /* background: linear-gradient(90deg, #ffd700 65%, #00008b 35%); */
 
     .layout-main {
+      background: var(--bg-navy);
     }
   }
 }
