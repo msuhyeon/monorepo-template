@@ -71,7 +71,7 @@
           <h1 class="section__content--title">Experience</h1>
           <!-- <p class="section__content--sub">근무 한 곳</p> -->
           <div class="section__content jobs">
-            <!-- <div role="tabList" aria-label="Job tabs" class="jobs-tabs">
+            <div role="tabList" aria-label="Job tabs" class="jobs-tabs">
               <button
                 v-for="(item, index) in company"
                 :key="index"
@@ -109,19 +109,20 @@
                   </li>
                 </ul>
               </div>
-            </div> -->
-            <!-- :class="hover ? 'jobs-card hover' : 'jobs-card'" -->
+            </div>
+
+            <!--
             <div
               v-for="(item, index) in company"
               :key="index"
               ref="card"
               :class="hover ? `active card ${index}` : ` card ${index}`"
             >
-              <!-- <div v-show="false" class="card-header">
+              <div v-show="false" class="card-header">
                 <h2 class="name">
                   {{ item.name }}
                 </h2>
-              </div> -->
+              </div> 
               <div>
                 <img src="" alt="item.name" />
               </div>
@@ -139,14 +140,14 @@
                   :key="cIndex"
                   class="career-list-item"
                 >
-                  <!-- <font-awesome-icon :icon="['fas', 'check']" /> -->
+                   <font-awesome-icon :icon="['fas', 'check']" />
                   <p>{{ career }}</p>
                 </li>
               </ul>
-            </div>
+            </div>-->
           </div>
-        </section></SwiperSlide
-      >
+        </section>
+      </SwiperSlide>
       <SwiperSlide>
         <section id="projects" class="section career-section">
           <h1 class="section__content--title">Work</h1>
@@ -293,7 +294,7 @@ export default {
       font-family: 'Black Han Sans';
     }
     .section__content--right {
-      padding-left: 17rem;
+      padding-left: 35rem;
       .avatar {
         width: 15rem;
       }
