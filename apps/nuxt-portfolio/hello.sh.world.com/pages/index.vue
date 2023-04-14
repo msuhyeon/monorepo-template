@@ -1,65 +1,77 @@
 <template>
   <div class="main">
-    <div>
-      <section id="home" class="section main-section">
-        <div class="section__content--wrap">
-          <div class="section__content--left">
-            <h2 class="section__content--sub">Hi i'm Suhyeon Maeng</h2>
-            <h1 class="section__content--title">Web Developer</h1>
-            <p class="section__content--desc">
-              저는 뛰어난 디지털 경험을 추구하는 프론트엔드 엔지니어 입니다.
-              <br />
-              웹 사이트의 디테일, 디자이너와의 의사소통을 위해 최근엔 UX/UI를
-              학습 중 입니다.
-            </p>
-            <p class="section__content--desc">
-              저랑 함께 웹을 만들어가는게 기대되시나요?
-            </p>
-            <div class="section__content--button-wrap">
-              <button>연락해보기</button>
-              <button>프로젝트 구경 하기</button>
+    <Swiper
+      direction="vertical"
+      :pagination="{
+        clickable: true,
+      }"
+      :modules="modules"
+      :css-mode="true"
+      class="page-swiper"
+    >
+      <SwiperSlide>
+        <section id="home" class="section main-section">
+          <div class="section__content--wrap">
+            <div class="section__content--left">
+              <h2 class="section__content--sub">Hi i'm Suhyeon Maeng</h2>
+              <h1 class="section__content--title">Web Developer</h1>
+              <p class="section__content--desc">
+                저는 뛰어난 디지털 경험을 추구하는 프론트엔드 엔지니어 입니다.
+                <br />
+                웹 사이트의 디테일, 디자이너와의 의사소통을 위해 최근엔 UX/UI를
+                학습 중 입니다.
+              </p>
+              <p class="section__content--desc">
+                저랑 함께 웹을 만들어가는게 기대되시나요?
+              </p>
+              <div class="section__content--button-wrap">
+                <button>연락해보기</button>
+                <button>프로젝트 구경 하기</button>
+              </div>
+            </div>
+            <div class="section__content--right">
+              <img
+                class="avatar"
+                src="../assets/images/Avatar.png"
+                alt="avatar image"
+              />
+            </div>
+          </div></section
+      ></SwiperSlide>
+      <SwiperSlide>
+        <section id="about" class="section main-section">
+          <div class="section__content--about">
+            <div class="about-item-wrap">
+              <span>
+                <font-awesome-icon icon="fa-solid fa-truck-fast" />
+              </span>
+
+              <p>
+                빠른 로딩 시간과 지연 없는 인터랙션을 구현하는게 최우선
+                순위입니다.
+              </p>
+            </div>
+            <div class="about-item-wrap">
+              <span>
+                <font-awesome-icon icon="fa-solid fa-laptop-code" />
+              </span>
+              <p>크고 작은 모든 디바이스에서 아름답게 보여지도록 작업합니다.</p>
+            </div>
+            <div class="about-item-wrap">
+              <span>
+                <font-awesome-icon icon="fa-solid fa-user" />
+              </span>
+              <p>사용하기 쉬운 직관적인 UX/UI를 선호합니다.</p>
             </div>
           </div>
-          <div class="section__content--right">
-            <img
-              class="avatar"
-              src="../assets/images/Avatar.png"
-              alt="avatar image"
-            />
-          </div>
-        </div>
-      </section>
-      <section id="about" class="section main-section">
-        <div class="section__content--about">
-          <div class="about-item-wrap">
-            <span>
-              <font-awesome-icon icon="fa-solid fa-truck-fast" />
-            </span>
-
-            <p>
-              빠른 로딩 시간과 지연 없는 인터랙션을 구현하는게 최우선
-              순위입니다.
-            </p>
-          </div>
-          <div class="about-item-wrap">
-            <span>
-              <font-awesome-icon icon="fa-solid fa-laptop-code" />
-            </span>
-            <p>크고 작은 모든 디바이스에서 아름답게 보여지도록 작업합니다.</p>
-          </div>
-          <div class="about-item-wrap">
-            <span>
-              <font-awesome-icon icon="fa-solid fa-user" />
-            </span>
-            <p>사용하기 쉬운 직관적인 UX/UI를 선호합니다.</p>
-          </div>
-        </div>
-      </section>
-      <section id="work" class="section job-section">
-        <h1 class="section__content--title">Experience</h1>
-        <!-- <p class="section__content--sub">근무 한 곳</p> -->
-        <div class="section__content jobs">
-          <!-- <div role="tabList" aria-label="Job tabs" class="jobs-tabs">
+        </section>
+      </SwiperSlide>
+      <SwiperSlide>
+        <section id="work" class="section job-section">
+          <h1 class="section__content--title">Experience</h1>
+          <!-- <p class="section__content--sub">근무 한 곳</p> -->
+          <div class="section__content jobs">
+            <div role="tabList" aria-label="Job tabs" class="jobs-tabs">
               <button
                 v-for="(item, index) in company"
                 :key="index"
@@ -92,81 +104,101 @@
                     :key="cIndex"
                     class="career-list-item"
                   >
-                    <font-awesome-icon :icon="['fas', 'check']" />
+                    <font-awesome-icon :icon="['fas', 'play']" />
                     <span>{{ career }}</span>
                   </li>
                 </ul>
               </div>
-            </div> -->
-          <!-- :class="hover ? 'jobs-card hover' : 'jobs-card'" -->
-          <div
-            v-for="(item, index) in company"
-            :key="index"
-            ref="card"
-            :class="hover ? `active card ${index}` : ` card ${index}`"
-          >
-            <!-- <div v-show="false" class="card-header">
+            </div>
+
+            <!--
+            <div
+              v-for="(item, index) in company"
+              :key="index"
+              ref="card"
+              :class="hover ? `active card ${index}` : ` card ${index}`"
+            >
+              <div v-show="false" class="card-header">
                 <h2 class="name">
                   {{ item.name }}
                 </h2>
-              </div> -->
-            <div>
-              <img src="" alt="item.name" />
-            </div>
-            <div class="job-title">
-              <h4 class="name">
-                {{ item.name }}
-              </h4>
-              <span class="position">{{ item.position }}</span
-              >&nbsp;&#64; <span class="company">{{ item.name }}</span>
-              <p class="period">{{ item.period }}</p>
-            </div>
-            <ul class="career-list">
-              <li
-                v-for="(career, cIndex) in item.careers"
-                :key="cIndex"
-                class="career-list-item"
-              >
-                <!-- <font-awesome-icon :icon="['fas', 'check']" /> -->
-                <p>{{ career }}</p>
-              </li>
-            </ul>
+              </div> 
+              <div>
+                <img src="" alt="item.name" />
+              </div>
+              <div class="job-title">
+                <h4 class="name">
+                  {{ item.name }}
+                </h4>
+                <span class="position">{{ item.position }}</span
+                >&nbsp;&#64; <span class="company">{{ item.name }}</span>
+                <p class="period">{{ item.period }}</p>
+              </div>
+              <ul class="career-list">
+                <li
+                  v-for="(career, cIndex) in item.careers"
+                  :key="cIndex"
+                  class="career-list-item"
+                >
+                   <font-awesome-icon :icon="['fas', 'check']" />
+                  <p>{{ career }}</p>
+                </li>
+              </ul>
+            </div>-->
           </div>
-        </div>
-      </section>
-      <section id="projects" class="section career-section">
-        <h1 class="section__content--title">Work</h1>
-        <p class="section__content--sub">
-          웹사이트를 위한 것들을 만들고 있습니다.
-        </p>
-        <p class="section__content--desc">
-          저는 뛰어난 디지털 경험을 구축하는 프론트엔드 엔지니어 입니다. 현재
-          저는 위메이드 전기아이피에 근무하며 프론트팀을 리딩하고있습니다.
-        </p>
-      </section>
-      <section id="contact" class="section contact-section">
-        <div class="section__content--contact">
-          <h1 class="section__content--title">Contact me</h1>
-          <p class="section__content--sub">메일함은 언제든 열려있습니다.</p>
-          <p class="section__content--desc">
-            업무가 바쁜 경우엔 회신이 늦어질 수 있습니다. 늦어도 이틀 내엔 연락
-            드리겠습니다.
+        </section>
+      </SwiperSlide>
+      <SwiperSlide>
+        <section id="projects" class="section career-section">
+          <h1 class="section__content--title">Work</h1>
+          <p class="section__content--sub">
+            웹사이트를 위한 것들을 만들고 있습니다.
           </p>
-          <a
-            href="mailto:job.maengsh@gmail.com?body=안녕하세요. 포트폴리오를 보고 연락드립니다."
-            class="mail hover:shadow font-bold py-3 px-8 text-xl rounded text-center"
-            >Say Hello 👋</a
-          >
-        </div>
-      </section>
-    </div>
+          <p class="section__content--desc">
+            저는 뛰어난 디지털 경험을 구축하는 프론트엔드 엔지니어 입니다. 현재
+            저는 위메이드 전기아이피에 근무하며 프론트팀을 리딩하고있습니다.
+          </p>
+        </section></SwiperSlide
+      >
+      <SwiperSlide>
+        <section id="contact" class="section contact-section">
+          <div class="section__content--contact">
+            <h1 class="section__content--title">Contact me</h1>
+            <p class="section__content--sub">메일함은 언제든 열려있습니다.</p>
+            <p class="section__content--desc">
+              업무가 바쁜 경우엔 회신이 늦어질 수 있습니다. 늦어도 이틀 내엔
+              연락 드리겠습니다.
+            </p>
+            <a
+              href="mailto:job.maengsh@gmail.com?body=안녕하세요. 포트폴리오를 보고 연락드립니다."
+              class="mail hover:shadow font-bold py-3 px-8 text-xl rounded text-center"
+              >Say Hello 👋</a
+            >
+          </div>
+        </section></SwiperSlide
+      >
+    </Swiper>
   </div>
 </template>
 <script>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper';
+
 definePageMeta({
   layout: 'default',
 });
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {
+      modules: [Pagination],
+    };
+  },
   data() {
     return {
       company: [
@@ -241,9 +273,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 .main {
-  background: var(--bg-navy);
-  .section {
+  .swiper {
     height: 100vh;
+
+    .swiper-slide {
+      /* height: 100vh; */
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+    }
 
     .section__content--wrap {
       display: flex;
@@ -256,7 +294,7 @@ export default {
       font-family: 'Black Han Sans';
     }
     .section__content--right {
-      padding-left: 17rem;
+      padding-left: 35rem;
       .avatar {
         width: 15rem;
       }
@@ -321,88 +359,91 @@ export default {
     .section__content.jobs {
       display: flex;
       margin-top: 1rem;
-      flex-wrap: wrap;
+      /* flex-wrap: wrap; */
       gap: 20px;
 
-      /* .jobs-tabs {
-          display: flex;
-          flex-direction: column;
-          border-left: 1px solid var(--pink-light-color);
-  
-          .jobs-tab {
-            width: max-content;
-            width: 18rem;
-            border: none;
-            background: none;
-            cursor: pointer;
-            height: var(--tab-height);
-  
+      .jobs-tabs {
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid var(--pink-light-color);
+
+        .jobs-tab {
+          width: max-content;
+          width: 18rem;
+          border: none;
+          background: none;
+          cursor: pointer;
+          height: var(--tab-height);
+
+          span {
+            color: var(--text-color);
+            padding: 0px 20px 2px;
+            text-align: left;
+          }
+
+          &:hover {
+            transition: all 0.3s ease-in-out;
+            background-color: var(--bright-yellow);
             span {
-              color: var(--text-color);
-              padding: 0px 20px 2px;
-              text-align: left;
-            }
-  
-            &:hover {
-              transition: all 0.3s ease-in-out;
-              background-color: var(--bright-yellow);
-              span {
-                color: #fff;
-              }
-            }
-          }
-          .jobs-tab.on {
-            transition: var(--transition);
-            border-left: 2px solid var(--yellow-color);
-          }
-        }
-        .jobs-panels {
-          width: 100%;
-          padding: 10px 8px;
-          color: var(--text-color);
-  
-          .job-title {
-            margin-bottom: 0.5rem;
-            line-height: var(--line-height);
-  
-            .position {
-              font-size: 1.3rem;
-            }
-          }
-          .period {
-            font-size: 1.2rem;
-            line-height: var(--line-height);
-            margin-bottom: 1.8rem;
-          }
-        }
-        .jobs-panel {
-          display: none;
-  
-          .career-list {
-            .career-list-item {
-              margin-bottom: 0.5rem;
-              line-height: 1.5rem;
-  
-              svg {
-                width: 1rem;
-              }
+              color: #fff;
             }
           }
         }
-        .jobs-panel.on {
-          display: block;
+        .jobs-tab.on {
           transition: var(--transition);
+          border-left: 2px solid var(--yellow-color);
         }
-  
-        .jobs-card {
-          background: var(--secondary-color);
-          box-sizing: border-box;
-          width: calc(25% - 6px);
-          height: 250px;
-          display: flex;
-          justify-content: center;
-          align-content: center;
-        } */
+      }
+      .jobs-panels {
+        width: 100%;
+        padding: 10px 8px;
+        color: var(--text-color);
+
+        .job-title {
+          margin-bottom: 0.5rem;
+          line-height: var(--line-height);
+
+          .position {
+            font-size: 1.3rem;
+          }
+        }
+        .period {
+          font-size: 1.2rem;
+          line-height: var(--line-height);
+          margin-bottom: 1.8rem;
+        }
+      }
+      .jobs-panel {
+        display: none;
+
+        .career-list {
+          .career-list-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            line-height: 1.5rem;
+
+            svg {
+              width: 0.8rem;
+              margin-right: 0.7rem;
+            }
+          }
+        }
+      }
+      .jobs-panel.on {
+        display: block;
+        transition: var(--transition);
+      }
+
+      .jobs-card {
+        background: var(--secondary-color);
+        box-sizing: border-box;
+        width: calc(25% - 6px);
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
       .card {
         width: calc(33.3% - 20px);
         border-radius: 2rem;
@@ -436,5 +477,20 @@ export default {
       }
     }
   }
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical > .swiper-pagination-bullets {
+  transform: translate3d(-2rem, -50%, 0) 1 !important;
+}
+.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+  background: #fff !important;
+  height: 1rem !important;
+  width: 1rem !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--bright-yellow);
 }
 </style>

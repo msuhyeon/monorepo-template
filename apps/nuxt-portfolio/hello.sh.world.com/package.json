@@ -46,6 +46,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "@openafg/nuxt-fullpage": "^1.0.5",
     "sal.js": "^0.8.5",
+    "swiper": "^9.1.1",
     "vite-plugin-eslint": "^1.8.1"
   }
 }

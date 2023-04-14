@@ -2,27 +2,19 @@
   <nav>
     <ul>
       <li>
-        <NuxtLink to="/#home" @click="$emit('clickGnb', false)">Home</NuxtLink>
+        <NuxtLink to="/home">Home</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/#about" @click="$emit('clickGnb', false)"
-          >About</NuxtLink
-        >
+        <NuxtLink to="/about">About</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/#work" @click="$emit('clickGnb', false)"
-          >Experience</NuxtLink
-        >
+        <NuxtLink to="/work">Experience</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/#projects" @click="$emit('clickGnb', false)"
-          >Projects</NuxtLink
-        >
+        <NuxtLink to="/projects">Projects</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/#contact" @click="$emit('clickGnb', false)"
-          >Contact</NuxtLink
-        >
+        <NuxtLink to="/contact">Contact</NuxtLink>
       </li>
     </ul>
   </nav>
@@ -34,7 +26,7 @@ export default {};
 nav {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   height: 100%;
 
   ul {
