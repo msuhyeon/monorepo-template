@@ -1,15 +1,15 @@
-import eslintPlugin from "vite-plugin-eslint";
+import eslintPlugin from 'vite-plugin-eslint';
 
 export default defineNuxtConfig({
-  css: ["~/assets/css/base.scss"],
-  buildModules: ["nuxt-vite", "@nuxtjs/style-resources"],
+  css: ['~/assets/css/base.scss'],
+  buildModules: ['nuxt-vite', '@nuxtjs/style-resources'],
   app: {
     head: {
       htmlAttrs: {
-        lang: "ko",
+        lang: 'ko',
       },
-      title: "msh",
-      meta: [{ charset: "utf-8" }],
+      title: 'msh',
+      meta: [{ charset: 'utf-8' }],
     },
   },
   vite: {
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
 
     modules: [
       [
-        "@fullpage/nuxt-fullpage",
+        '@fullpage/nuxt-fullpage',
         {
           activeSection: 0,
           mouseWheelSensitivity: 120,
@@ -41,7 +41,6 @@ export default defineNuxtConfig({
         failOnError: false,
         cache: false,
       }),
-      { src: "~/plugins/aos.js", mode: "client" },
     ],
   },
 });
