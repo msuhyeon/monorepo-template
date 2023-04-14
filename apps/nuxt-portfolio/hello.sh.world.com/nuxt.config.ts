@@ -25,7 +25,6 @@ export default defineNuxtConfig({
       },
     },
     // '@fortawesome/fontawesome-svg-core/styles.css',
-
     modules: [
       [
         '@fullpage/nuxt-fullpage',
