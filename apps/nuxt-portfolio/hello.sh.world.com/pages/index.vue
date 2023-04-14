@@ -104,7 +104,7 @@
                     :key="cIndex"
                     class="career-list-item"
                   >
-                    <font-awesome-icon :icon="['fas', 'check']" />
+                    <font-awesome-icon :icon="['fas', 'play']" />
                     <span>{{ career }}</span>
                   </li>
                 </ul>
@@ -359,88 +359,91 @@ export default {
     .section__content.jobs {
       display: flex;
       margin-top: 1rem;
-      flex-wrap: wrap;
+      /* flex-wrap: wrap; */
       gap: 20px;
 
-      /* .jobs-tabs {
-          display: flex;
-          flex-direction: column;
-          border-left: 1px solid var(--pink-light-color);
-  
-          .jobs-tab {
-            width: max-content;
-            width: 18rem;
-            border: none;
-            background: none;
-            cursor: pointer;
-            height: var(--tab-height);
-  
+      .jobs-tabs {
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid var(--pink-light-color);
+
+        .jobs-tab {
+          width: max-content;
+          width: 18rem;
+          border: none;
+          background: none;
+          cursor: pointer;
+          height: var(--tab-height);
+
+          span {
+            color: var(--text-color);
+            padding: 0px 20px 2px;
+            text-align: left;
+          }
+
+          &:hover {
+            transition: all 0.3s ease-in-out;
+            background-color: var(--bright-yellow);
             span {
-              color: var(--text-color);
-              padding: 0px 20px 2px;
-              text-align: left;
-            }
-  
-            &:hover {
-              transition: all 0.3s ease-in-out;
-              background-color: var(--bright-yellow);
-              span {
-                color: #fff;
-              }
-            }
-          }
-          .jobs-tab.on {
-            transition: var(--transition);
-            border-left: 2px solid var(--yellow-color);
-          }
-        }
-        .jobs-panels {
-          width: 100%;
-          padding: 10px 8px;
-          color: var(--text-color);
-  
-          .job-title {
-            margin-bottom: 0.5rem;
-            line-height: var(--line-height);
-  
-            .position {
-              font-size: 1.3rem;
-            }
-          }
-          .period {
-            font-size: 1.2rem;
-            line-height: var(--line-height);
-            margin-bottom: 1.8rem;
-          }
-        }
-        .jobs-panel {
-          display: none;
-  
-          .career-list {
-            .career-list-item {
-              margin-bottom: 0.5rem;
-              line-height: 1.5rem;
-  
-              svg {
-                width: 1rem;
-              }
+              color: #fff;
             }
           }
         }
-        .jobs-panel.on {
-          display: block;
+        .jobs-tab.on {
           transition: var(--transition);
+          border-left: 2px solid var(--yellow-color);
         }
-  
-        .jobs-card {
-          background: var(--secondary-color);
-          box-sizing: border-box;
-          width: calc(25% - 6px);
-          height: 250px;
-          display: flex;
-          justify-content: center;
-          align-content: center;
-        } */
+      }
+      .jobs-panels {
+        width: 100%;
+        padding: 10px 8px;
+        color: var(--text-color);
+
+        .job-title {
+          margin-bottom: 0.5rem;
+          line-height: var(--line-height);
+
+          .position {
+            font-size: 1.3rem;
+          }
+        }
+        .period {
+          font-size: 1.2rem;
+          line-height: var(--line-height);
+          margin-bottom: 1.8rem;
+        }
+      }
+      .jobs-panel {
+        display: none;
+
+        .career-list {
+          .career-list-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            line-height: 1.5rem;
+
+            svg {
+              width: 0.8rem;
+              margin-right: 0.7rem;
+            }
+          }
+        }
+      }
+      .jobs-panel.on {
+        display: block;
+        transition: var(--transition);
+      }
+
+      .jobs-card {
+        background: var(--secondary-color);
+        box-sizing: border-box;
+        width: calc(25% - 6px);
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
       .card {
         width: calc(33.3% - 20px);
         border-radius: 2rem;
