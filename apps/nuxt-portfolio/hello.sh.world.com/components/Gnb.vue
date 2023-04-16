@@ -2,19 +2,19 @@
   <nav>
     <ul>
       <li>
-        <NuxtLink to="/home">Home</NuxtLink>
+        <NuxtLink to="#home">Home</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/about">About</NuxtLink>
+        <NuxtLink to="#about">About</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/work">Experience</NuxtLink>
+        <NuxtLink to="#work">Experience</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/projects">Projects</NuxtLink>
+        <NuxtLink to="#projects">Projects</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/contact">Contact</NuxtLink>
+        <NuxtLink to="#contact">Contact</NuxtLink>
       </li>
     </ul>
   </nav>
@@ -37,7 +37,7 @@ nav {
     li {
       a {
         color: #fff;
-        font-size: 1.2rem;
+        font-size: 2rem;
       }
     }
   }

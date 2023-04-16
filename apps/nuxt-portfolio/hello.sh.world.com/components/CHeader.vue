@@ -51,7 +51,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 5rem;
+    padding: 2rem 10rem;
 
     .header__logo {
       display: flex;
@@ -64,15 +64,15 @@ export default {
 
       .header__logo--sub {
         color: #ffd700;
-        font-size: 2rem;
+        font-size: 4rem;
 
         span {
           position: relative;
           top: 10px;
           display: inline-block;
-          animation: bounce 0.3s ease infinite alternate;
+          animation: bounce 0.4s ease infinite alternate;
           font-family: cursive;
-          text-shadow: 0 1px 0 var(--brightest-yellow);
+          text-shadow: 0 1px 0 var(black);
           animation-delay: 0.1s;
         }
 

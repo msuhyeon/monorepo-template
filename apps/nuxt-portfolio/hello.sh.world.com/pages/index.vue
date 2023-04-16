@@ -69,7 +69,6 @@
       <SwiperSlide>
         <section id="work" class="section job-section">
           <h1 class="section__content--title">Experience</h1>
-          <!-- <p class="section__content--sub">근무 한 곳</p> -->
           <div class="section__content jobs">
             <div role="tabList" aria-label="Job tabs" class="jobs-tabs">
               <button
@@ -110,41 +109,6 @@
                 </ul>
               </div>
             </div>
-
-            <!--
-            <div
-              v-for="(item, index) in company"
-              :key="index"
-              ref="card"
-              :class="hover ? `active card ${index}` : ` card ${index}`"
-            >
-              <div v-show="false" class="card-header">
-                <h2 class="name">
-                  {{ item.name }}
-                </h2>
-              </div> 
-              <div>
-                <img src="" alt="item.name" />
-              </div>
-              <div class="job-title">
-                <h4 class="name">
-                  {{ item.name }}
-                </h4>
-                <span class="position">{{ item.position }}</span
-                >&nbsp;&#64; <span class="company">{{ item.name }}</span>
-                <p class="period">{{ item.period }}</p>
-              </div>
-              <ul class="career-list">
-                <li
-                  v-for="(career, cIndex) in item.careers"
-                  :key="cIndex"
-                  class="career-list-item"
-                >
-                   <font-awesome-icon :icon="['fas', 'check']" />
-                  <p>{{ career }}</p>
-                </li>
-              </ul>
-            </div>-->
           </div>
         </section>
       </SwiperSlide>
@@ -286,7 +250,7 @@ export default {
     .section__content--wrap {
       display: flex;
     }
-    padding: 15rem 15rem 0;
+    padding: 15rem 25rem 0;
     /* margin-top: calc(11.12em + 2em); */
     .section__content--title {
       font-size: 5rem;
@@ -294,7 +258,7 @@ export default {
       font-family: 'Black Han Sans';
     }
     .section__content--right {
-      padding-left: 35rem;
+      padding-left: 10rem;
       .avatar {
         width: 15rem;
       }
@@ -302,12 +266,12 @@ export default {
     .section__content--sub {
       margin-top: 20px;
       margin-bottom: 10px;
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: #ecdb6e;
     }
     .section__content--desc {
-      font-size: 1rem;
-      line-height: 1.8rem;
+      font-size: 1.3rem;
+      line-height: 2.5rem;
       color: #fff;
     }
     .section__content--button-wrap {
@@ -352,6 +316,8 @@ export default {
 
         p {
           word-break: keep-all;
+          padding-top: 1.8rem;
+          font-size: 1.3rem;
         }
       }
     }
@@ -365,7 +331,7 @@ export default {
       .jobs-tabs {
         display: flex;
         flex-direction: column;
-        border-left: 1px solid var(--pink-light-color);
+        border-left: 1px solid var(--yellow-color);
 
         .jobs-tab {
           width: max-content;
@@ -391,7 +357,12 @@ export default {
         }
         .jobs-tab.on {
           transition: var(--transition);
-          border-left: 2px solid var(--yellow-color);
+          background: var(--bright-yellow);
+
+          span {
+            color: var(--bg-navy);
+            font-weight: 600;
+          }
         }
       }
       .jobs-panels {
@@ -426,6 +397,9 @@ export default {
             svg {
               width: 0.8rem;
               margin-right: 0.7rem;
+            }
+            span {
+              font-size: 1.2rem;
             }
           }
         }
@@ -472,6 +446,8 @@ export default {
     }
     .section__content--contact {
       a {
+        font-size: 2rem;
+        line-height: 3rem;
         line-height: 1.8rem;
         color: var(--bright-yellow);
       }
@@ -492,5 +468,16 @@ export default {
 
 .swiper-pagination-bullet-active {
   background: var(--bright-yellow);
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical > .swiper-pagination-bullets {
+  right: 2rem !important;
+}
+.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+  background: #fff !important;
+  width: 2rem !important;
+  height: 2rem !important;
 }
 </style>
